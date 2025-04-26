@@ -2067,7 +2067,7 @@
     "@sanity/diff-match-patch" "^3.2.0"
     lodash "^4.17.21"
 
-"@portabletext/react@^3.0.0":
+"@portabletext/react@^3.0.0", "@portabletext/react@^3.2.1":
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/@portabletext/react/-/react-3.2.1.tgz#9fc19c9bfef3b2c2e6b71628e7879d1f343446cf"
   integrity sha512-RyFLk6u2q6ZyABTdOk+xoNR2Tq/4fcQFEWayNk4Kbd3gHpUUTabqOrDMChcmG6C7YVLSpwIEBwHoBVcy4vK/hA==
@@ -2245,7 +2245,7 @@
     semver "^7.3.5"
     validate-npm-package-name "^3.0.0"
 
-"@sanity/client@^5.10.3", "@sanity/client@^6.24.1", "@sanity/client@^6.28.3", "@sanity/client@^6.28.4", "@sanity/client@^6.29.0":
+"@sanity/client@^5.10.3", "@sanity/client@^6.22.4", "@sanity/client@^6.24.1", "@sanity/client@^6.28.3", "@sanity/client@^6.28.4", "@sanity/client@^6.29.0":
   version "6.29.1"
   resolved "https://registry.yarnpkg.com/@sanity/client/-/client-6.29.1.tgz#a40e6be06481b7291d9dc0115ef34809bb5befe3"
   integrity sha512-BQRCMeDlBxwnMbFtB61HUxFf9aSb4HNVrpfrC7IFVqFf4cwcc3o5H8/nlrL9U3cDFedbe4W0AXt1mQzwbY/ljw==
@@ -2407,7 +2407,7 @@
     tar-fs "^2.1.2"
     tinyglobby "^0.2.9"
 
-"@sanity/insert-menu@^1.1.9":
+"@sanity/insert-menu@^1.1.10", "@sanity/insert-menu@^1.1.9":
   version "1.1.10"
   resolved "https://registry.yarnpkg.com/@sanity/insert-menu/-/insert-menu-1.1.10.tgz#efe83f8c48f41c089b2926262e89d30167627037"
   integrity sha512-nkcO9v8ORuuGYOQBcHJbW7ot4+ukoIn4PLJieDZGw1iNxgTXt2TKePfX72aqRUvAsvxrT1001gYoW/LBQwm6Rw==
@@ -2444,6 +2444,19 @@
     groq-js "^1.16.1"
     p-map "^7.0.1"
 
+"@sanity/mutate@0.11.0-canary.4":
+  version "0.11.0-canary.4"
+  resolved "https://registry.yarnpkg.com/@sanity/mutate/-/mutate-0.11.0-canary.4.tgz#d6cf5da86fded6d5ee53b7dc58c3f517d30ad83b"
+  integrity sha512-82jU3PvxQepY+jVJU1WaXQOf2Q9Q/fOCE2ksJZ4cnH3/WFOsg7RceYoOWb1XKthchTCD9zSBS9DRmb7FQ0Jlsg==
+  dependencies:
+    "@sanity/client" "^6.22.4"
+    "@sanity/diff-match-patch" "^3.1.1"
+    hotscript "^1.0.13"
+    lodash "^4.17.21"
+    lodash-es "^4.17.21"
+    mendoza "^3.0.7"
+    rxjs "^7.8.1"
+
 "@sanity/mutate@^0.12.4":
   version "0.12.4"
   resolved "https://registry.yarnpkg.com/@sanity/mutate/-/mutate-0.12.4.tgz#f713c63c4cb640510784c72454883ff1a2f856d4"
@@ -2469,6 +2482,17 @@
     debug "^4.3.4"
     lodash "^4.17.21"
 
+"@sanity/next-loader@^1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@sanity/next-loader/-/next-loader-1.5.0.tgz#78159d147a8f79be919f16500b6e6c7c83967d9e"
+  integrity sha512-6Eh4arut/4B8GXg2xqXMT2icoRLPLDPm6pAQkKuOlrjIEkBLRVQmIgLpW2V1NltW4yelwJ09DHqzIa0CjZ89Fw==
+  dependencies:
+    "@sanity/client" "^6.29.0"
+    "@sanity/comlink" "^3.0.1"
+    "@sanity/presentation-comlink" "^1.0.16"
+    dequal "^2.0.3"
+    use-effect-event "^1.0.2"
+
 "@sanity/presentation-comlink@^1.0.16":
   version "1.0.16"
   resolved "https://registry.yarnpkg.com/@sanity/presentation-comlink/-/presentation-comlink-1.0.16.tgz#ef8e7cde27dce38a488814fe186625d3f16da862"
@@ -2477,7 +2501,16 @@
     "@sanity/comlink" "^3.0.1"
     "@sanity/visual-editing-types" "^1.0.15"
 
-"@sanity/preview-url-secret@^2.1.7":
+"@sanity/preview-kit@^6.0.8":
+  version "6.0.8"
+  resolved "https://registry.yarnpkg.com/@sanity/preview-kit/-/preview-kit-6.0.8.tgz#ece9a541a815681bb8628ac9a95a04f7d9ab8727"
+  integrity sha512-WyE38fn3A/piIdGrrI6/XwlEsjANTuT+YLagk6KioHJitoq6BvS8WfElAB9Y/NOU8g8Xc7B5VX1/l7edcNjYhw==
+  dependencies:
+    "@sanity/comlink" "^3.0.1"
+    "@sanity/presentation-comlink" "^1.0.16"
+    use-sync-external-store "^1.5.0"
+
+"@sanity/preview-url-secret@^2.1.7", "@sanity/preview-url-secret@^2.1.8":
   version "2.1.8"
   resolved "https://registry.yarnpkg.com/@sanity/preview-url-secret/-/preview-url-secret-2.1.8.tgz#6b39bb933c202c527fb8b4a2e54a9c561175b05e"
   integrity sha512-i5moO9BYvct7SRdh+636WH5dMEUp0CDTWZW00S7aouQDpeC3FnYGch5EhQfAnWjClVSzBVEFv8rJlKjK106AOg==
@@ -2637,10 +2670,39 @@
     react-fast-compare "^3.2.2"
     use-effect-event "^1.0.2"
 
+"@sanity/visual-editing-csm@^2.0.14":
+  version "2.0.14"
+  resolved "https://registry.yarnpkg.com/@sanity/visual-editing-csm/-/visual-editing-csm-2.0.14.tgz#20fc1a62c2074f29baa5687acce3795ba1b26bb7"
+  integrity sha512-hyF+j2WaO+BZUeaIaivYlv/ucy4oglNfvlAZnEFA1wdtZgHrhKDAwMIt0+9HsqGwJvU52GQ35CJEr4SQbURITw==
+  dependencies:
+    "@sanity/visual-editing-types" "^1.0.15"
+    valibot "^1.0.0"
+
 "@sanity/visual-editing-types@^1.0.15":
   version "1.0.15"
   resolved "https://registry.yarnpkg.com/@sanity/visual-editing-types/-/visual-editing-types-1.0.15.tgz#c8339a24733b3cbea20cd287ecc40f45da858414"
   integrity sha512-6IvdbwdBfyQJ51iIZ4pnbl6/6yDy3HpZQwk8z2TQrkw4fVYRI96Be5+jilTCj7IunzLM570zkHHnffXeHFP4Yg==
+
+"@sanity/visual-editing@^2.13.18":
+  version "2.13.18"
+  resolved "https://registry.yarnpkg.com/@sanity/visual-editing/-/visual-editing-2.13.18.tgz#250cc9692fe49a8f4bd5c475788c5666e4d39cc4"
+  integrity sha512-++O/3ynIRYCT8YgjPFBcIc/wEzVDLI0I79Y3YikB4KRzCNG3TPvBARgNpaF+YY2JwxvjYI/SLhX87/Ru+yrmyQ==
+  dependencies:
+    "@sanity/comlink" "^3.0.1"
+    "@sanity/icons" "^3.7.0"
+    "@sanity/insert-menu" "^1.1.10"
+    "@sanity/mutate" "0.11.0-canary.4"
+    "@sanity/presentation-comlink" "^1.0.16"
+    "@sanity/preview-url-secret" "^2.1.8"
+    "@sanity/ui" "^2.15.13"
+    "@sanity/visual-editing-csm" "^2.0.14"
+    "@vercel/stega" "0.1.2"
+    get-random-values-esm "^1.0.2"
+    react-compiler-runtime "19.0.0-beta-e993439-20250405"
+    rxjs "^7.8.2"
+    scroll-into-view-if-needed "^3.1.0"
+    use-effect-event "^1.0.2"
+    xstate "^5.19.2"
 
 "@sentry-internal/browser-utils@8.55.0":
   version "8.55.0"
@@ -3023,6 +3085,11 @@
     "@codemirror/theme-one-dark" "^6.0.0"
     "@uiw/codemirror-extensions-basic-setup" "4.23.10"
     codemirror "^6.0.0"
+
+"@vercel/stega@0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@vercel/stega/-/stega-0.1.2.tgz#0c20c5c9419c4288b1de58a64b5f9f26c763b25f"
+  integrity sha512-P7mafQXjkrsoyTRppnt0N21udKS9wUmLXHRyP9saLXLHw32j/FgUJ3FscSWgvSqRs4cj7wKZtwqJEvWJ2jbGmA==
 
 "@vitejs/plugin-react@^4.3.4":
   version "4.4.1"
@@ -4163,6 +4230,11 @@ deprecation@^2.0.0:
   resolved "https://registry.yarnpkg.com/deprecation/-/deprecation-2.3.1.tgz#6368cbdb40abf3373b525ac87e4a260c3a700919"
   integrity sha512-xmHIy4F3scKVwMsQ4WnVaS8bHOx0DmVwRywosKhaILI0ywMDWPtBSku2HNxRvF7jtwDRsoEwYQSfbxj8b7RlJQ==
 
+dequal@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/dequal/-/dequal-2.0.3.tgz#2644214f1997d39ed0ee0ece72335490a7ac67be"
+  integrity sha512-0je+qPKHEMohvfRTCEo3CrPG6cAzAYgmzKyxRiYSSDkS6eGJdyVJm7WaYA5ECaAD9wLB2T4EEeymA5aFVcYXCA==
+
 detect-libc@^2.0.3:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/detect-libc/-/detect-libc-2.0.4.tgz#f04715b8ba815e53b4d8109655b6508a6865a7e8"
@@ -5196,7 +5268,7 @@ groq-js@^1.16.1:
   dependencies:
     debug "^4.3.4"
 
-groq@3.86.1:
+groq@3.86.1, groq@^3.84.0, groq@^3.86.1:
   version "3.86.1"
   resolved "https://registry.yarnpkg.com/groq/-/groq-3.86.1.tgz#c7e275c49bcef8aed97f470764dfb1bf2b433859"
   integrity sha512-87KF+20HZuoQD/E8GQk/DMM+edobO++/KHz7/5U4CK4lQ7x6BVgyBWcpLZwPNcHSn8ZBHVO3mZu7+zNV1iX0VA==
@@ -6168,7 +6240,7 @@ mdn-data@2.0.30:
   resolved "https://registry.yarnpkg.com/mdn-data/-/mdn-data-2.0.30.tgz#ce4df6f80af6cfbe218ecd5c552ba13c4dfa08cc"
   integrity sha512-GaqWWShW4kv/G9IEucWScBx9G1/vsFZZJUO+tD26M8J8z3Kw5RDQjaoZe03YAClgeS/SWPOcb4nkFBTEi5DUEA==
 
-mendoza@^3.0.0, mendoza@^3.0.8:
+mendoza@^3.0.0, mendoza@^3.0.7, mendoza@^3.0.8:
   version "3.0.8"
   resolved "https://registry.yarnpkg.com/mendoza/-/mendoza-3.0.8.tgz#3b5a050d1fad1d9972cfc42fb57fbcafa0476399"
   integrity sha512-iwxgEpSOx9BDLJMD0JAzNicqo9xdrvzt6w/aVwBKMndlA6z/DH41+o60H2uHB0vCR1Xr37UOgu9xFWJHvYsuKw==
@@ -6400,6 +6472,20 @@ natural-compare@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==
+
+next-sanity@^9.10.2:
+  version "9.10.2"
+  resolved "https://registry.yarnpkg.com/next-sanity/-/next-sanity-9.10.2.tgz#a52e39b6ba8684c270b908a82f0ac95b8aaf9882"
+  integrity sha512-3V3YUhxp/6eXpw4QSklvHv6WOnE5nzm6mJxNkfHdufMEfFPvCItp4DPasfjdKskWHFiGA+HJWC/4G4xRLPo6iQ==
+  dependencies:
+    "@portabletext/react" "^3.2.1"
+    "@sanity/client" "^6.29.0"
+    "@sanity/next-loader" "^1.5.0"
+    "@sanity/preview-kit" "^6.0.8"
+    "@sanity/preview-url-secret" "^2.1.8"
+    "@sanity/visual-editing" "^2.13.18"
+    groq "^3.84.0"
+    history "^5.3.0"
 
 next@15.3.1:
   version "15.3.1"
@@ -8786,6 +8872,11 @@ uuidv7@^0.4.4:
   version "0.4.4"
   resolved "https://registry.yarnpkg.com/uuidv7/-/uuidv7-0.4.4.tgz#e7ffd7981f590c478fb8868eff4bb3bc55fa90e6"
   integrity sha512-jjRGChg03uGp9f6wQYSO8qXkweJwRbA5WRuEQE8xLIiehIzIIi23qZSzsyvZPCPoFqkeLtZuz7Plt1LGukAInA==
+
+valibot@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/valibot/-/valibot-1.0.0.tgz#1f82514296abcd23d0ae4280088ba85f8651c564"
+  integrity sha512-1Hc0ihzWxBar6NGeZv7fPLY0QuxFMyxwYR2sF1Blu7Wq7EnremwY2W02tit2ij2VJT8HcSkHAQqmFfl77f73Yw==
 
 validate-npm-package-license@^3.0.1:
   version "3.0.4"
