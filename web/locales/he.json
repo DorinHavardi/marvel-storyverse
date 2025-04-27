@@ -6,5 +6,11 @@
     },
     "errors": {
         "something_went_wrong": "משהו השתבש"
+    },
+    "navigation": {
+        "movies": "סרטים",
+        "characters": "דמויות",
+        "sagas": "סאגות",
+        "worlds": "עולמות"
     }
 }
