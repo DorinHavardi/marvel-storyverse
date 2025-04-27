@@ -1,28 +1,25 @@
 'use client';
 
-import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
-import { useState } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { I18nextProvider } from 'react-i18next';
+import i18n from '@/i18n';
+import { useLocales } from '@/hooks/useLocales.hook';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
+const queryClient = new QueryClient();
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const [queryClient] = useState(() => new QueryClient());
+  const { dir, lang } = useLocales();
 
   return (
-    <html lang="en" className={`${geistSans.variable}`}>
+    <html lang={lang} dir={dir}>
       <body>
         <QueryClientProvider client={queryClient}>
-          {children}
+          <I18nextProvider i18n={i18n}>{children}</I18nextProvider>
         </QueryClientProvider>
       </body>
     </html>
