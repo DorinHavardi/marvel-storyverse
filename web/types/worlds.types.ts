@@ -6,4 +6,5 @@ export interface World {
   name: LocalizedString;
   description: LocalizedText;
   movies?: Movie[];
+  photo?: any;
 }
