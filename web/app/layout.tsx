@@ -22,7 +22,7 @@ export default function RootLayout({
         <QueryClientProvider client={queryClient}>
           <I18nextProvider i18n={i18n}>
             <Navbar />
-            <main className="min-h-screen">{children}</main>
+            {/* <main className="min-h-screen">{children}</main> */}
           </I18nextProvider>
         </QueryClientProvider>
       </body>

@@ -1,5 +1,6 @@
 'use client';
 
+import { ErrorNotice } from '@/components/ErrorNotice/ErrorNotice.cmp';
 import { WorldCard } from '@/components/WorldCard/WorldCard.cmp';
 import { useWorlds } from '@/hooks/useWorlds.hook';
 import { useTranslation } from 'react-i18next';
@@ -9,8 +10,7 @@ export default function WorldsPage() {
   const { data: worlds, isLoading, error } = useWorlds();
 
   if (isLoading) return <div className="p-10 text-center">{t('loading')}</div>;
-  if (error)
-    return <div className="p-10 text-center text-red-500">{t('error')}</div>;
+  if (error) return <ErrorNotice />;
 
   return (
     <div className="p-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
