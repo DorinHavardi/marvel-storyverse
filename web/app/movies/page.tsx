@@ -9,13 +9,20 @@ export default function MoviesPage() {
   const { t } = useTranslation();
   const { data: movies, isLoading, error } = useMovies();
 
-  if (isLoading)
-    return <div className="p-10 text-center">{t('common.loading')}</div>;
+  if (isLoading) return <div>Loading...</div>;
   if (error) return <ErrorNotice />;
+
+  if (!movies?.length) {
+    return (
+      <div className="p-10 text-center text-gray-400">No movies found 😢</div>
+    );
+  }
 
   return (
     <div className="p-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-      {movies?.map(movie => <MovieCard key={movie._id} movie={movie} />)}
+      {movies.map(movie => (
+        <MovieCard key={movie._id} movie={movie} />
+      ))}
     </div>
   );
 }

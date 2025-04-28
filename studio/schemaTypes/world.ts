@@ -22,4 +22,15 @@ export default defineType({
       of: [{type: 'reference', to: [{type: 'movie'}]}],
     }),
   ],
+  preview: {
+    select: {
+      title: 'name.en',
+    },
+    prepare(selection) {
+      const {title} = selection
+      return {
+        title: title || 'Untitled World',
+      }
+    },
+  },
 })

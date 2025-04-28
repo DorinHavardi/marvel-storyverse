@@ -45,4 +45,22 @@ export default defineType({
       of: [{type: 'string'}],
     }),
   ],
+  preview: {
+    select: {
+      title: 'title.en',
+      type: 'type',
+      releaseDate: 'releaseDate',
+    },
+    prepare(selection) {
+      const {title, type, releaseDate} = selection
+
+      const releaseYear = releaseDate ? new Date(releaseDate).getFullYear() : ''
+
+      return {
+        title: title || 'Untitled Movie/Series',
+        subtitle: `${type || 'Unknown'}${releaseYear ? ` - ${releaseYear}` : ''}`,
+        media: 'poster',
+      }
+    },
+  },
 })
