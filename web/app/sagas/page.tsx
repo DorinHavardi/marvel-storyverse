@@ -9,7 +9,7 @@ export default function SagasPage() {
   const { t } = useTranslation();
   const { data: sagas, isLoading, error } = useSagas();
 
-  // if (isLoading) return <div className="p-10 text-center">{t('loading')}</div>;
+  if (isLoading) return <div className="p-10 text-center">{t('loading')}</div>;
   if (error) return <ErrorNotice />;
 
   return (

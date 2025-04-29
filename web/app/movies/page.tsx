@@ -9,7 +9,7 @@ export default function MoviesPage() {
   const { t } = useTranslation();
   const { data: movies, isLoading, error } = useMovies();
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <div className="p-10 text-center">{t('loading')}</div>;
   if (error) return <ErrorNotice />;
 
   if (!movies?.length) {

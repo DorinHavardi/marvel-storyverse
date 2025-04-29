@@ -9,7 +9,7 @@ export default function WorldsPage() {
   const { t } = useTranslation();
   const { data: worlds, isLoading, error } = useWorlds();
 
-  // if (isLoading) return <div className="p-10 text-center">{t('loading')}</div>;
+  if (isLoading) return <div className="p-10 text-center">{t('loading')}</div>;
   if (error) return <ErrorNotice />;
 
   return (

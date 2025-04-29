@@ -9,7 +9,7 @@ export default function CharactersPage() {
   const { t } = useTranslation();
   const { data: characters, isLoading, error } = useCharacters();
 
-  // if (isLoading) return <div className="p-10 text-center">{t('loading')}</div>;
+  if (isLoading) return <div className="p-10 text-center">{t('loading')}</div>;
   if (error) return <ErrorNotice />;
 
   return (
