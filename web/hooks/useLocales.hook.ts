@@ -7,11 +7,12 @@ export const useLocales = () => {
   const [lang, setLang] = useState('en');
 
   useEffect(() => {
-    const currentLang = i18n.language || 'en';
+    const currentLang = 'he';
+    // || i18n.language;
     const direction = currentLang === 'he' ? 'rtl' : 'ltr';
 
     setDir(direction);
-    setLang(currentLang);
+    setLang(currentLang.slice(0, 2));
 
     const handleLanguageChanged = (lng: string) => {
       const newDirection = lng === 'he' ? 'rtl' : 'ltr';

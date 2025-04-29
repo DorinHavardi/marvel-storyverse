@@ -1,28 +1,27 @@
+import { useLocales } from '@/hooks/useLocales.hook';
 import { Movie } from '@/types/movies.types';
 import Image from 'next/image';
 
 interface MovieCardProps {
   movie: Movie;
+  align: 'left' | 'right';
 }
 
-export const MovieCard = ({ movie }: MovieCardProps) => {
+export const MovieCard = ({ movie, align }: MovieCardProps) => {
+  const { lang } = useLocales();
+  console.log(lang);
   return (
-    <div className="border rounded-xl overflow-hidden shadow-md hover:shadow-lg transition p-4 bg-white">
-      {movie?.poster && (
-        <Image
-          src={movie?.poster?.asset?.url || '/placeholder.jpg'}
-          alt={movie?.title?.en}
-          width={300}
-          height={450}
-          className="w-full h-64 object-cover rounded-lg"
-        />
-      )}
-      <div className="mt-4">
-        <h2 className="text-xl font-bold mb-2">{movie?.title?.en}</h2>
-        <p className="text-gray-600 text-sm">{movie?.synopsis?.en}</p>
-        <div className="text-xs text-gray-400 mt-2">
-          Release: {new Date(movie?.releaseDate).toLocaleDateString()}
-        </div>
+    <div
+      className={`relative w-full flex ${align === 'left' ? 'justify-start' : 'justify-end'}`}
+    >
+      <div className="bg-neutral text-primary-medium rounded-xl p-4 shadow-md">
+        <p className="text-sm text-neutral-text mb-1">{movie?.timelineDate}</p>
+
+        <h3 className="text-xl font-semibold text-accent-deep mb-2">
+          {movie?.title?.[lang]}
+        </h3>
+        <p className="text-sm text-neutral-text mb-1">{movie?.releaseDate}</p>
+        <p className="text-sm text-neutral-text">{movie?.synopsis?.[lang]}</p>
       </div>
     </div>
   );

@@ -18,11 +18,35 @@ export default function MoviesPage() {
     );
   }
 
+  const sortedMovies = [...movies].sort((a, b) => {
+    const timelineA = Number(a.timelineDate);
+    const timelineB = Number(b.timelineDate);
+
+    if (timelineA !== timelineB) {
+      return timelineA - timelineB; // קודם כל לפי timeline
+    }
+
+    // אם timeline שווה — נמיין לפי releaseDate
+    const releaseA = new Date(a.releaseDate).getTime();
+    const releaseB = new Date(b.releaseDate).getTime();
+
+    return releaseA - releaseB;
+  });
+
   return (
-    <div className="p-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-      {movies.map(movie => (
-        <MovieCard key={movie._id} movie={movie} />
-      ))}
+    <div className="relative p-8">
+      {/* הקו של הציר */}
+      <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gray-300 transform -translate-x-1/2" />
+
+      <div className="flex flex-col gap-12">
+        {sortedMovies.map((movie, index) => (
+          <MovieCard
+            key={movie._id}
+            movie={movie}
+            align={index % 2 === 0 ? 'left' : 'right'}
+          />
+        ))}
+      </div>
     </div>
   );
 }
