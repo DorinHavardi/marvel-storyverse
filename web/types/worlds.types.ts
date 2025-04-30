@@ -1,10 +1,10 @@
 import { MovieType } from './movies.types';
-import { LocalizedString, LocalizedText } from './sanity.types';
+import { LocalizedStringType, LocalizedTextType } from './sanity.types';
 
 export interface World {
   _id: string;
-  name: LocalizedString;
-  description: LocalizedText;
+  name: LocalizedStringType;
+  description: LocalizedTextType;
   movies?: MovieType[];
   photo?: any;
 }

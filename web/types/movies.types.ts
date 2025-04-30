@@ -1,12 +1,12 @@
-import { LocalizedString, LocalizedText } from './sanity.types';
+import { LocalizedStringType, LocalizedTextType } from './sanity.types';
 
 export interface MovieType {
   _id: string;
-  title: LocalizedString;
+  title: LocalizedStringType;
   type: 'movie' | 'series';
   releaseDate: string;
   timelineDate: string;
-  synopsis: LocalizedText;
+  synopsis: LocalizedTextType;
   poster?: any;
   whereToWatch?: string[];
 }

@@ -7,6 +7,9 @@ const config: Config = {
       fontFamily: {
         sans: ['"Open Sans"', 'sans-serif'],
       },
+      boxShadow: {
+        glow: '0 0 10px 3px rgba(255, 255, 255, 0.6)',
+      },
       colors: {
         primary: {
           dark: '#0C0F17',
