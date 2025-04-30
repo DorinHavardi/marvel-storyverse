@@ -12,7 +12,8 @@
     "deploy-graphql": "sanity graphql deploy",
     "delete-movies": "sanity documents query '*[_type == \"movie\"]._id' --api-version 1 --dataset production | jq -r '.[]' | xargs -I {} sanity documents delete {} --dataset production",
     "import-movies": "sanity dataset import data/movies.ndjson production",
-    "reset-movies": "yarn delete-movies && yarn import-movies"
+    "reset-movies": "yarn delete-movies && yarn import-movies",
+    "import-sagas": "sanity dataset import data/sagas.ndjson production"
   },
   "keywords": [
     "sanity"

@@ -19,17 +19,46 @@ export default defineType({
       name: 'movies',
       type: 'array',
       title: 'Movies in Saga',
-      of: [{type: 'reference', to: [{type: 'movie'}]}],
+      of: [
+        {
+          type: 'object',
+          fields: [
+            defineField({
+              name: 'movie',
+              type: 'reference',
+              to: [{type: 'movie'}],
+              title: 'Movie',
+            }),
+            defineField({
+              name: 'order',
+              type: 'number',
+              title: 'Order in Saga',
+            }),
+          ],
+          preview: {
+            select: {
+              title: 'movie.title.en',
+              order: 'order',
+            },
+            prepare(selection) {
+              return {
+                title: selection.title || 'Untitled Movie',
+                subtitle: selection.order ? `Order: ${selection.order}` : '',
+              }
+            },
+          },
+        },
+      ],
     }),
   ],
   preview: {
     select: {
-      title: 'title.en',
+      name: 'name.en',
     },
     prepare(selection) {
-      const {title} = selection
+      const {name} = selection
       return {
-        title: title || 'Untitled Saga',
+        title: name || 'Untitled Saga',
       }
     },
   },

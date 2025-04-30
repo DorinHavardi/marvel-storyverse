@@ -5,7 +5,7 @@ import { MovieType } from '@/types/movies.types';
 import { urlFor } from '@/sanity/client';
 import Image from 'next/image';
 import { isValidImageSource } from '@/utils/image.util';
-import { LocalizedStringType } from '@/types/sanity.types';
+import { useRouter } from 'next/navigation';
 
 interface MovieCardProps {
   movie: MovieType;
@@ -13,6 +13,7 @@ interface MovieCardProps {
 }
 
 export const MovieCard = ({ movie, align }: MovieCardProps) => {
+  const router = useRouter();
   const { lang } = useLocales();
 
   const DEFAULT_POSTER_URL = '/images/default-poster.jpg';
@@ -34,21 +35,19 @@ export const MovieCard = ({ movie, align }: MovieCardProps) => {
       </div>
       <div
         className={`flex justify-center text-center ${desktopAlignment} w-full`}
+        onClick={() => router.push(`/movies/${movie._id}`)}
       >
         <div className="relative w-[250px] h-[370px] rounded-xl overflow-hidden shadow-md">
           <Image
             src={posterUrl}
-            alt={
-              movie?.title?.[lang as keyof LocalizedStringType] ||
-              'Movie poster'
-            }
+            alt={movie?.title?.[lang] || 'Movie poster'}
             fill
             className="object-cover"
             sizes="(max-width: 768px) 100vw, 250px"
           />
           <div className="absolute inset-0 bg-black/50 flex flex-col justify-end p-4">
             <h3 className="text-3xl font-semibold text-white mb-2">
-              {movie?.title?.[lang as keyof LocalizedStringType]}
+              {movie?.title?.[lang]}
             </h3>
             <p className="text-xs text-gray-300">{movie?.releaseDate}</p>
           </div>

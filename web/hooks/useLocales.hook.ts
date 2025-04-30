@@ -1,10 +1,11 @@
 'use client';
 import { useEffect, useState } from 'react';
 import i18n from '@/i18n';
+import { ELanguages } from '@/enum/locale.enum';
 
 export const useLocales = () => {
   const [dir, setDir] = useState<'rtl' | 'ltr'>('ltr');
-  const [lang, setLang] = useState('en');
+  const [lang, setLang] = useState<ELanguages>(ELanguages.he);
 
   useEffect(() => {
     const currentLang = 'he';
@@ -29,3 +30,6 @@ export const useLocales = () => {
 
   return { dir, lang };
 };
+function LanguageType(arg0: string) {
+  throw new Error('Function not implemented.');
+}

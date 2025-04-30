@@ -12,3 +12,15 @@ export const getMoviesQuery = groq`
     whereToWatch
   }
 `;
+
+export const getMovieByIdQuery = (id: string) => groq`
+  *[_type == "movie" && _id == "${id}"][0]{
+    _id,
+    title,
+    type,
+    releaseDate,
+    timelineDate,
+    synopsis,
+    poster
+  }
+`;

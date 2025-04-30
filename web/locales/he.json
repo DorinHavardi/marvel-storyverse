@@ -2,7 +2,8 @@
     "common": {
         "movies": "סרטים",
         "characters": "דמויות",
-        "loading": "טוען..."
+        "loading": "טוען...",
+        "TBD": "בקרוב"
     },
     "errors": {
         "something_went_wrong": "משהו השתבש"
@@ -12,5 +13,12 @@
         "characters": "דמויות",
         "sagas": "סאגות",
         "worlds": "עולמות"
+    },
+    "movie_screen": {
+        "release_date": "תאריך יציאה",
+        "characters": "גיבורים",
+        "across_the_realms": "בין העולמות",
+        "across_the_sagas": "שבר מתוך הסאגה",
+        "TBD": "בקרוב"
     }
 }
