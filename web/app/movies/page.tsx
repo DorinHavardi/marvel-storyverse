@@ -37,15 +37,6 @@ export default function MoviesPage() {
             key={movie._id}
             className="relative flex flex-col items-center md:items-start md:flex-row"
           >
-            {/* Timeline dot */}
-            <div
-              className={`
-          absolute w-4 h-4 rounded-full bg-white
-          top-2
-          left-1/2 -translate-x-1/2
-        `}
-            />
-
             {/* Card */}
             <div
               className={`
