@@ -8,7 +8,8 @@
     "scripts": {
         "dev:studio": "yarn --cwd studio dev",
         "dev:web": "yarn --cwd web dev",
-        "dev": "concurrently \"yarn dev:studio\" \"yarn dev:web\""
+        "dev": "concurrently \"yarn dev:studio\" \"yarn dev:web\"",
+        "sync-references": "node scripts/syncReferences.js"
     },
     "devDependencies": {
         "concurrently": "^8.2.0"
