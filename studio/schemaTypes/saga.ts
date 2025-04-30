@@ -50,6 +50,12 @@ export default defineType({
         },
       ],
     }),
+    defineField({
+      name: 'phases',
+      type: 'array',
+      title: 'Phases in Saga',
+      of: [{type: 'reference', to: [{type: 'phase'}]}],
+    }),
   ],
   preview: {
     select: {

@@ -8,7 +8,12 @@ export default defineType({
     defineField({
       name: 'name',
       type: 'localizedString',
-      title: 'Name',
+      title: 'Hero Name',
+    }),
+    defineField({
+      name: 'realName',
+      type: 'localizedString',
+      title: 'Real Name',
     }),
     defineField({
       name: 'description',
@@ -30,11 +35,12 @@ export default defineType({
   preview: {
     select: {
       title: 'name.en',
+      subtitle: 'realName.en',
     },
-    prepare(selection) {
-      const {title} = selection
+    prepare({title, subtitle}) {
       return {
         title: title || 'Untitled Character',
+        subtitle: subtitle ? `Real Name: ${subtitle}` : '',
       }
     },
   },

@@ -1,0 +1,6 @@
+{"_type": "phase", "name": "Phase One", "saga": {"_type": "reference", "_ref": "36f83d24-f8e7-419f-ab19-0538f981563e"}}
+{"_type": "phase", "name": "Phase Two", "saga": {"_type": "reference", "_ref": "36f83d24-f8e7-419f-ab19-0538f981563e"}}
+{"_type": "phase", "name": "Phase Three", "saga": {"_type": "reference", "_ref": "36f83d24-f8e7-419f-ab19-0538f981563e"}}
+{"_type": "phase", "name": "Phase Four", "saga": {"_type": "reference", "_ref": "f02babd1-392a-4c14-9d39-ca7a783d40c2"}}
+{"_type": "phase", "name": "Phase Five", "saga": {"_type": "reference", "_ref": "f02babd1-392a-4c14-9d39-ca7a783d40c2"}}
+{"_type": "phase", "name": "Phase Six", "saga": {"_type": "reference", "_ref": "f02babd1-392a-4c14-9d39-ca7a783d40c2"}}

@@ -1,42 +1,42 @@
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
-  name: 'world',
+  name: 'phase',
   type: 'document',
-  title: 'World',
+  title: 'Phase',
   fields: [
     defineField({
       name: 'name',
-      type: 'localizedString',
-      title: 'World Name',
+      type: 'string',
+      title: 'Phase Name',
     }),
     defineField({
       name: 'description',
       type: 'localizedText',
-      title: 'World Description',
+      title: 'Phase Description',
     }),
     defineField({
-      name: 'image',
-      type: 'image',
-      title: 'World Image',
+      name: 'saga',
+      type: 'reference',
+      to: [{type: 'saga'}],
+      title: 'Saga',
     }),
     defineField({
       name: 'movies',
       type: 'array',
-      title: 'Movies/Series in World',
+      title: 'Movies in Phase',
       of: [{type: 'reference', to: [{type: 'movie'}]}],
     }),
   ],
   preview: {
     select: {
-      title: 'name.en',
-      media: 'image',
+      title: 'name',
+      sagaTitle: 'saga.name.en',
     },
-    prepare(selection) {
-      const {title, media} = selection
+    prepare({title, sagaTitle}) {
       return {
-        title: title || 'Untitled World',
-        media,
+        title: title || 'Unnamed Phase',
+        subtitle: sagaTitle ? `Saga: ${sagaTitle}` : '',
       }
     },
   },

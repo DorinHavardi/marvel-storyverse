@@ -13,7 +13,10 @@
     "delete-movies": "sanity documents query '*[_type == \"movie\"]._id' --api-version 1 --dataset production | jq -r '.[]' | xargs -I {} sanity documents delete {} --dataset production",
     "import-movies": "sanity dataset import data/movies.ndjson production",
     "reset-movies": "yarn delete-movies && yarn import-movies",
-    "import-sagas": "sanity dataset import data/sagas.ndjson production"
+    "import-sagas": "sanity dataset import data/sagas.ndjson production",
+    "import-phases": "sanity dataset import data/phases.ndjson production",
+    "import-characters": "sanity dataset import data/characters.ndjson production",
+    "import-worlds": "sanity dataset import data/worlds.ndjson production"
   },
   "keywords": [
     "sanity"
