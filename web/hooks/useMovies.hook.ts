@@ -6,12 +6,11 @@ import {
 } from '@/sanity/queries/movies.query';
 import { MovieType } from '@/types/movies.types';
 
-export const useMovies = () => {
-  return useQuery<MovieType[]>({
+export const useMovies = () =>
+  useQuery<MovieType[]>({
     queryKey: ['movies'],
     queryFn: () => fetcher<MovieType[]>(getMoviesQuery),
   });
-};
 
 export const useMovieById = (id: string) =>
   useQuery<MovieType>({

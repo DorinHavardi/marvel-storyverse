@@ -1,11 +1,17 @@
 import { useQuery } from '@tanstack/react-query';
 import { fetcher } from '@/sanity/fetcher';
-import { World } from '@/types/worlds.types';
-import { getWorldsQuery } from '@/sanity/queries/worlds.query';
+import { WorldType } from '@/types/worlds.types';
+import { getWorldById, getWorldsQuery } from '@/sanity/queries/worlds.query';
 
-export const useWorlds = () => {
-  return useQuery<World[]>({
+export const useWorlds = () =>
+  useQuery<WorldType[]>({
     queryKey: ['worlds'],
-    queryFn: () => fetcher<World[]>(getWorldsQuery),
+    queryFn: () => fetcher<WorldType[]>(getWorldsQuery),
   });
-};
+
+export const useGetWorldByIdQuery = (id: string) =>
+  useQuery<WorldType>({
+    queryKey: ['world', id],
+    queryFn: () => fetcher(getWorldById(id)),
+    enabled: !!id,
+  });

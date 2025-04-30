@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next';
 export default function WorldsPage() {
   const { t } = useTranslation();
   const { data: worlds, isLoading, error } = useWorlds();
-
+  console.log('worlds', worlds);
   if (isLoading) return <div className="p-10 text-center">{t('loading')}</div>;
   if (error) return <ErrorNotice />;
 

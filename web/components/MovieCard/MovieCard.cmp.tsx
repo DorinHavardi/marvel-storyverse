@@ -6,17 +6,18 @@ import { urlFor } from '@/sanity/client';
 import Image from 'next/image';
 import { isValidImageSource } from '@/utils/image.util';
 import { useRouter } from 'next/navigation';
+import { DEFAULT_POSTER_URL } from '@/constants/images.const';
+import { ENavigationLinks } from '@/enum/navigation.enum';
 
 interface MovieCardProps {
   movie: MovieType;
-  align: 'left' | 'right';
+  align?: 'left' | 'right';
 }
 
 export const MovieCard = ({ movie, align }: MovieCardProps) => {
   const router = useRouter();
   const { lang } = useLocales();
 
-  const DEFAULT_POSTER_URL = '/images/default-poster.jpg';
   const posterUrl = isValidImageSource(movie?.poster)
     ? urlFor(movie?.poster).width(250).height(370).url()
     : DEFAULT_POSTER_URL;
@@ -35,7 +36,7 @@ export const MovieCard = ({ movie, align }: MovieCardProps) => {
       </div>
       <div
         className={`flex justify-center text-center ${desktopAlignment} w-full`}
-        onClick={() => router.push(`/movies/${movie._id}`)}
+        onClick={() => router.push(`/${ENavigationLinks.movies}/${movie._id}`)}
       >
         <div className="relative w-[250px] h-[370px] rounded-xl overflow-hidden shadow-md">
           <Image
