@@ -16,6 +16,11 @@ export default defineType({
       title: 'World Description',
     }),
     defineField({
+      name: 'longDescription',
+      type: 'localizedText',
+      title: 'Extended World Description',
+    }),
+    defineField({
       name: 'image',
       type: 'image',
       title: 'World Image',

@@ -23,7 +23,7 @@ export default function WorldPage() {
   if (isLoading) return <div className="p-10 text-center">{t('loading')}</div>;
   if (error || !world) return <ErrorNotice />;
 
-  const { name, description, image, movies } = world;
+  const { name, description, image, movies, longDescription } = world;
 
   const imageUrl = isValidImageSource(image)
     ? urlFor(image).width(800).height(300).url()
@@ -31,7 +31,7 @@ export default function WorldPage() {
 
   return (
     <div className="max-w-4xl mx-auto">
-      <div className="relative w-full h-64 rounded-xl overflow-hidden mb-6">
+      <div className="relative w-full h-64 rounded-xl rounded-t-none overflow-hidden mb-6">
         <Image
           src={imageUrl}
           alt={name?.[lang] || 'World image'}
@@ -39,21 +39,27 @@ export default function WorldPage() {
           className="object-cover"
         />
       </div>
+      <div className="px-4">
+        <h1 className="text-3xl font-bold text-neutral-text mb-4">
+          {name?.[lang]}
+        </h1>
+        <p className="text-neutral-text mb-10 text-base">
+          {description?.[lang]}
+        </p>
+        {longDescription && (
+          <p className="text-neutral-text mb-10 text-base">
+            {longDescription?.[lang]}
+          </p>
+        )}
 
-      <h1 className="text-3xl font-bold text-neutral-text mb-4">
-        {name?.[lang]}
-      </h1>
-      <p className="text-neutral-text mb-10 text-base">{description?.[lang]}</p>
-
-      {movies?.length ? (
-        <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
-          {movies.map(movie => (
-            <MovieCard key={movie._id} movie={movie} />
-          ))}
-        </div>
-      ) : (
-        <p className="text-gray-500">{t('noMoviesForThisWorld')}</p>
-      )}
+        {movies?.length && (
+          <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+            {movies.map(movie => (
+              <MovieCard key={movie._id} movie={movie} />
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 }

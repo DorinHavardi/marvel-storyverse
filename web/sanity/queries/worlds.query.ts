@@ -18,18 +18,17 @@ export const getWorldsQuery = groq`
 }
 `;
 
-export const getWorldById = (id: string) => groq`
+export const getWorldByIdQuery = (id: string) => `
   *[_type == "world" && _id == "${id}"][0]{
     _id,
     name,
     description,
+    longDescription,
     image,
     movies[]->{
       _id,
       title,
       synopsis,
-      releaseDate,
-      timelineDate,
       poster
     }
   }

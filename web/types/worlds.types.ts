@@ -5,6 +5,7 @@ export interface WorldType {
   _id: string;
   name: LocalizedStringType;
   description: LocalizedTextType;
+  longDescription: LocalizedTextType;
   movies?: MovieType[];
   image?: {
     asset?: {
