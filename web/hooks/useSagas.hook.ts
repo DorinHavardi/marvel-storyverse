@@ -1,11 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
 import { fetcher } from '@/sanity/fetcher';
-import { Saga } from '@/types/sagas.types';
+import { SagaType } from '@/types/sagas.types';
 import { getSagasQuery } from '@/sanity/queries/sagas.query';
 
 export const useSagas = () => {
-  return useQuery<Saga[]>({
+  return useQuery<SagaType[]>({
     queryKey: ['sagas'],
-    queryFn: () => fetcher<Saga[]>(getSagasQuery),
+    queryFn: () => fetcher<SagaType[]>(getSagasQuery),
   });
 };

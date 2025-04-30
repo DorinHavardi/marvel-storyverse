@@ -5,9 +5,27 @@ export const getSagasQuery = groq`
     _id,
     name,
     description,
-    movies[]->{
+    
+    movies[]{
+      order,
+      movie->{
+        _id,
+        title,
+        releaseDate,
+        poster
+      }
+    },
+
+    phases[]->{
       _id,
-      title
+      name,
+      description,
+      movies[]->{
+        _id,
+        title,
+        releaseDate,
+        poster
+      }
     }
   }
 `;
