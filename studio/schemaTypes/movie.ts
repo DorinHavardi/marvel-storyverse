@@ -50,16 +50,14 @@ export default defineType({
       title: 'title.en',
       type: 'type',
       releaseDate: 'releaseDate',
+      poster: 'poster',
     },
-    prepare(selection) {
-      const {title, type, releaseDate} = selection
-
+    prepare({title, type, releaseDate, poster}) {
       const releaseYear = releaseDate ? new Date(releaseDate).getFullYear() : ''
-
       return {
         title: title || 'Untitled Movie/Series',
         subtitle: `${type || 'Unknown'}${releaseYear ? ` - ${releaseYear}` : ''}`,
-        media: 'poster',
+        media: poster,
       }
     },
   },

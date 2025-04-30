@@ -1,4 +1,4 @@
-import { Movie } from './movies.types';
+import { MovieType } from './movies.types';
 import { LocalizedString, LocalizedText } from './sanity.types';
 
 export interface Character {
@@ -6,5 +6,5 @@ export interface Character {
   name: LocalizedString;
   description: LocalizedText;
   photo?: any;
-  movies?: Movie[];
+  movies?: MovieType[];
 }

@@ -1,6 +1,6 @@
 import { LocalizedString, LocalizedText } from './sanity.types';
 
-export interface Movie {
+export interface MovieType {
   _id: string;
   title: LocalizedString;
   type: 'movie' | 'series';

@@ -21,30 +21,44 @@ export default function MoviesPage() {
   const sortedMovies = [...movies].sort((a, b) => {
     const timelineA = Number(a.timelineDate);
     const timelineB = Number(b.timelineDate);
+    if (timelineA !== timelineB) return timelineA - timelineB;
 
-    if (timelineA !== timelineB) {
-      return timelineA - timelineB; // קודם כל לפי timeline
-    }
-
-    // אם timeline שווה — נמיין לפי releaseDate
     const releaseA = new Date(a.releaseDate).getTime();
     const releaseB = new Date(b.releaseDate).getTime();
-
     return releaseA - releaseB;
   });
 
   return (
-    <div className="relative p-8">
-      {/* הקו של הציר */}
-      <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gray-300 transform -translate-x-1/2" />
+    <div className="relative px-4 py-12">
+      {/* Vertical line */}
+      <div className="absolute left-4 top-0 bottom-0 w-1 bg-gray-300 md:left-1/2 transform md:-translate-x-1/2" />
 
-      <div className="flex flex-col gap-12">
+      <div className="flex flex-col gap-20">
         {sortedMovies.map((movie, index) => (
-          <MovieCard
+          <div
             key={movie._id}
-            movie={movie}
-            align={index % 2 === 0 ? 'left' : 'right'}
-          />
+            className="relative flex flex-col md:flex-row md:items-start"
+          >
+            {/* Timeline dot */}
+            <div
+              className={`
+                absolute w-4 h-4 rounded-full bg-primary-500
+                top-2
+                ${index % 2 === 0 ? 'left-4 md:left-1/2 md:-translate-x-1/2' : 'left-4 md:left-1/2 md:-translate-x-1/2'}
+              `}
+            />
+
+            {/* Card */}
+            <div
+              className={`
+                mt-6 md:mt-2
+                md:w-1/2
+                ${index % 2 === 0 ? 'md:pl-[calc(1rem+8px)] md:pr-4 md:text-right md:self-start' : 'md:pl-4 md:pr-[calc(1rem+8px)] md:self-end'}
+              `}
+            >
+              <MovieCard movie={movie} />
+            </div>
+          </div>
         ))}
       </div>
     </div>
