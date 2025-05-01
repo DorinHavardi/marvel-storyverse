@@ -21,7 +21,7 @@ export default defineType({
       title: 'Description',
     }),
     defineField({
-      name: 'photo',
+      name: 'image',
       type: 'image',
       title: 'Photo',
     }),
@@ -36,11 +36,14 @@ export default defineType({
     select: {
       title: 'name.en',
       subtitle: 'realName.en',
+      media: 'image',
     },
-    prepare({title, subtitle}) {
+    prepare(selection) {
+      const {title, subtitle, media} = selection
       return {
         title: title || 'Untitled Character',
         subtitle: subtitle ? `Real Name: ${subtitle}` : '',
+        media,
       }
     },
   },

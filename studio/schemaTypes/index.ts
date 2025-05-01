@@ -1,9 +1,9 @@
-import localizedString from './localizedString'
-import localizedText from './localizedText'
-import movie from './movie'
-import character from './character'
-import world from './world'
-import saga from './saga'
-import phase from './phase'
+import localizedString from './localizedString.schema'
+import localizedText from './localizedText.schema'
+import movie from './movie.schema'
+import character from './character.schema'
+import world from './world.schema'
+import saga from './saga.schema'
+import phase from './phase.schema'
 
 export const schemaTypes = [localizedString, localizedText, movie, character, world, saga, phase]
