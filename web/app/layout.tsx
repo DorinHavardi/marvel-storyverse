@@ -26,7 +26,7 @@ export default function RootLayout({
 
   return (
     <html lang={lang} dir={dir} suppressHydrationWarning={true}>
-      <body className={assistant.className}>
+      <body className={`${assistant.className} h-screen overflow-hidden`}>
         <QueryClientProvider client={queryClient}>
           <I18nextProvider i18n={i18n}>
             <Navbar />
