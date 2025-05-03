@@ -8,6 +8,8 @@ import i18n from '@/i18n';
 import { useLocales } from '@/hooks/useLocales.hook';
 import { Navbar } from '@/components/Navigation/Navbar.cmp';
 import { assistant } from '@/styles/fonts.style';
+import { AnimatePresence, motion } from 'framer-motion';
+import { usePathname } from 'next/navigation';
 
 const queryClient = new QueryClient();
 
@@ -16,6 +18,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const pathname = usePathname();
   const { dir, lang } = useLocales();
 
   return (
@@ -24,7 +27,18 @@ export default function RootLayout({
         <QueryClientProvider client={queryClient}>
           <I18nextProvider i18n={i18n}>
             <Navbar />
-            <main className="relative z-0">{children}</main>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={pathname}
+                initial={{ scale: 0.92, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 1.05, opacity: 0 }}
+                transition={{ duration: 0.4 }}
+                className="relative z-0"
+              >
+                <main>{children}</main>
+              </motion.div>
+            </AnimatePresence>
           </I18nextProvider>
           {process.env.NODE_ENV === 'development' && (
             <ReactQueryDevtools initialIsOpen={false} />
