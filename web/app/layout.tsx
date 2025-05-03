@@ -7,7 +7,6 @@ import { I18nextProvider } from 'react-i18next';
 import i18n from '@/i18n';
 import { useLocales } from '@/hooks/useLocales.hook';
 import { Navbar } from '@/components/Navigation/Navbar.cmp';
-import { usePathname } from 'next/navigation';
 import { assistant } from '@/styles/fonts.style';
 
 const queryClient = new QueryClient();
@@ -18,17 +17,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const { dir, lang } = useLocales();
-  const pathname = usePathname(); // ✅ קבלת הנתיב הנוכחי
-  const showNavbar = true;
-  // pathname !== '/'; // ✅ הסתרה בדף הבית
 
   return (
     <html lang={lang} dir={dir} suppressHydrationWarning={true}>
-      <body className={`${assistant.className} h-screen overflow-hidden`}>
+      <body className={`${assistant.className} min-h-screen overflow-x-hidden`}>
         <QueryClientProvider client={queryClient}>
           <I18nextProvider i18n={i18n}>
-            {showNavbar && <Navbar />}
-            <main className="min-h-screen">{children}</main>
+            <Navbar />
+            <main className="relative z-0">{children}</main>
           </I18nextProvider>
           {process.env.NODE_ENV === 'development' && (
             <ReactQueryDevtools initialIsOpen={false} />

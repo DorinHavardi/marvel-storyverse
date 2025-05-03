@@ -11,7 +11,7 @@ export default function HomePage() {
 
   return (
     <main>
-      <section className="relative w-full h-[95vh] flex flex-col items-center justify-center text-center px-4">
+      <section className="relative w-full h-[100vh] flex flex-col items-center justify-center text-center px-4">
         <div className="relative z-20">
           <Logo />
         </div>

@@ -11,39 +11,58 @@ export const MobileMenu = () => {
 
   return (
     <>
-      <button onClick={() => setOpen(!open)} className="p-2 focus:outline-none">
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          stroke="#6C2B2A"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
+      {/* כפתור תפריט ראשוני */}
+      {!open && (
+        <button
+          onClick={() => setOpen(true)}
+          className="p-2 focus:outline-none"
         >
-          {open ? (
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M6 18L18 6M6 6l12 12"
-            />
-          ) : (
+          <svg
+            className="w-8 h-8"
+            fill="none"
+            stroke="white"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth="2"
               d="M4 6h16M4 12h16M4 18h16"
             />
-          )}
-        </svg>
-      </button>
+          </svg>
+        </button>
+      )}
 
       {open && (
-        <div className="absolute top-16 right-0 w-2/3 bg-white shadow-md rounded-l-lg z-50 p-4 flex flex-col gap-4">
+        <div className="absolute top-0 right-0 w-1/2 bg-white/10 backdrop-blur-md rounded-l-lg rounded-tl-none z-50 p-4 flex flex-col gap-6 drop-shadow-lg">
+          {/* כפתור סגירה בתוך התפריט */}
+          <button
+            onClick={() => setOpen(false)}
+            className="self-start p-2 focus:outline-none"
+          >
+            <svg
+              className="w-8 h-8"
+              fill="none"
+              stroke="white"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+
+          {/* לינקים */}
           {NAVIGATION_ROUTES.map(link => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-gray-800 text-lg"
+              className="text-white text-2xl"
               onClick={() => setOpen(false)}
             >
               {t(link.labelKey)}
