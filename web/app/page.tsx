@@ -2,11 +2,7 @@
 import Logo from '@/components/Logo/Logo.cmp';
 import Image from 'next/image';
 
-import { useTranslation } from 'react-i18next';
-
 export default function HomePage() {
-  const { t } = useTranslation();
-
   const cover = '/images/design/space/red_galaxy_bg.jpg';
 
   return (

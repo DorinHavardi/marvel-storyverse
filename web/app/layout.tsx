@@ -36,7 +36,7 @@ export default function RootLayout({
                 transition={{ duration: 0.4 }}
                 className="relative z-0"
               >
-                <main>{children}</main>
+                <main className="relative z-0 pt-16">{children}</main>
               </motion.div>
             </AnimatePresence>
           </I18nextProvider>
