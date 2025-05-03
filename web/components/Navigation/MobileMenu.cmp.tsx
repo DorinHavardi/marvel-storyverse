@@ -1,13 +1,17 @@
 'use client';
 
-import { useState } from 'react';
+import { Dispatch, SetStateAction } from 'react';
 import Link from 'next/link';
 import { NAVIGATION_ROUTES } from '@/constants/navigationRoutes.const';
 import { useTranslation } from 'react-i18next';
 
-export const MobileMenu = () => {
+interface MobileMenuProps {
+  open: boolean;
+  setOpen: Dispatch<SetStateAction<boolean>>;
+}
+
+export const MobileMenu = ({ open, setOpen }: MobileMenuProps) => {
   const { t } = useTranslation();
-  const [open, setOpen] = useState(false);
 
   return (
     <>

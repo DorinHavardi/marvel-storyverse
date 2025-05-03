@@ -30,9 +30,9 @@ export default function RootLayout({
             <AnimatePresence mode="wait">
               <motion.div
                 key={pathname}
-                initial={{ scale: 0.92, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 1.05, opacity: 0 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
                 transition={{ duration: 0.4 }}
                 className="relative z-0"
               >
