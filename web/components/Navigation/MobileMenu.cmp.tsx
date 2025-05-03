@@ -38,7 +38,7 @@ export const MobileMenu = () => {
       </button>
 
       {open && (
-        <div className="absolute top-16 left-0 w-2/3 bg-white shadow-md rounded-r-lg z-50 p-4 flex flex-col gap-4">
+        <div className="absolute top-16 right-0 w-2/3 bg-white shadow-md rounded-l-lg z-50 p-4 flex flex-col gap-4">
           {NAVIGATION_ROUTES.map(link => (
             <Link
               key={link.href}

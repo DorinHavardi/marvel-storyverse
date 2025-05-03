@@ -10,8 +10,6 @@ export const Navbar = () => {
 
   return (
     <nav className="w-full bg-white shadow-md sticky top-0 z-50 flex items-center justify-between p-4">
-      <div className="text-xl font-bold text-gray-800">Marvel Storyverse</div>
-
       <div className="hidden md:flex gap-8">
         {NAVIGATION_ROUTES.map(link => (
           <Link
@@ -27,6 +25,7 @@ export const Navbar = () => {
       <div className="md:hidden">
         <MobileMenu />
       </div>
+      <div className="text-xl font-bold text-gray-800">Marvel Storyverse</div>
     </nav>
   );
 };
