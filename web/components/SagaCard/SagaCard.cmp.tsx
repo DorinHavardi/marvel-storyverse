@@ -19,7 +19,6 @@ export const SagaCard = ({ saga }: SagaCardProps) => {
 
   const { name, description, phases } = saga;
 
-  console.log('phases', phases);
   return (
     <div className="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition p-4 px-6 bg-black/20 backdrop-blur-md">
       <div className="mb-4">
@@ -37,7 +36,7 @@ export const SagaCard = ({ saga }: SagaCardProps) => {
               <p className="text-18 mb-2">{phase?.description?.[lang]}</p>
 
               {phase?.movies?.length > 0 && (
-                <div className="list-disc list-inside text-16 pl-2 space-y-1">
+                <div className="flex flex-wrap text-16 pl-2 gap-4 justify-center">
                   {phase?.movies?.map(movie => {
                     const posterUrl = isValidImageSource(movie?.poster)
                       ? urlFor(movie?.poster).width(250).height(370).url()
@@ -50,7 +49,7 @@ export const SagaCard = ({ saga }: SagaCardProps) => {
                             `/${ENavigationLinks.movies}/${movie._id}`,
                           )
                         }
-                        className="relative w-[250px] h-[370px] rounded-xl overflow-hidden shadow-md"
+                        className="relative w-[40%] h-[200px] rounded-xl overflow-hidden shadow-md"
                       >
                         <Image
                           src={posterUrl}
@@ -59,13 +58,10 @@ export const SagaCard = ({ saga }: SagaCardProps) => {
                           className="object-cover"
                           sizes="(max-width: 768px) 100vw, 250px"
                         />
-                        <div className="absolute inset-0 bg-black/50 flex flex-col justify-end p-4">
-                          <h3 className="text-3xl font-semibold text-white mb-2">
+                        <div className="absolute inset-0 bg-black/60 flex flex-col justify-end p-3">
+                          <h3 className="text-xl font-semibold text-white">
                             {movie?.title?.[lang]}
                           </h3>
-                          <p className="text-xs text-gray-300">
-                            {movie?.releaseDate}
-                          </p>
                         </div>
                       </div>
                     );
