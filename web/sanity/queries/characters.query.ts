@@ -4,8 +4,14 @@ export const getCharactersQuery = groq`
   *[_type == "character"]{
     _id,
     name,
+    realName,
     description,
-    photo,
+    image{
+        asset->{
+      _id,
+      url
+      }
+    },
     movies[]->{
       _id,
       title
