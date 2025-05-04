@@ -35,39 +35,35 @@ export const SagaCard = ({ saga }: SagaCardProps) => {
               <p className="text-20 underline font-semibold">{phase?.name}</p>
               <p className="text-18 mb-2">{phase?.description?.[lang]}</p>
 
-              {phase?.movies?.length > 0 && (
-                <div className="flex flex-wrap text-16 pl-2 gap-4 justify-center">
-                  {phase?.movies?.map(movie => {
-                    const posterUrl = isValidImageSource(movie?.poster)
-                      ? urlFor(movie?.poster).width(250).height(370).url()
-                      : DEFAULT_POSTER_URL;
-                    return (
-                      <div
-                        key={movie?._id}
-                        onClick={() =>
-                          router.push(
-                            `/${ENavigationLinks.movies}/${movie._id}`,
-                          )
-                        }
-                        className="relative w-[40%] h-[200px] rounded-xl overflow-hidden shadow-md"
-                      >
-                        <Image
-                          src={posterUrl}
-                          alt={movie?.title?.[lang] || 'Movie poster'}
-                          fill
-                          className="object-cover"
-                          sizes="(max-width: 768px) 100vw, 250px"
-                        />
-                        <div className="absolute inset-0 bg-black/60 flex flex-col justify-end p-3">
-                          <h3 className="text-xl font-semibold text-white">
-                            {movie?.title?.[lang]}
-                          </h3>
-                        </div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                {phase?.movies?.map(movie => {
+                  const posterUrl = isValidImageSource(movie?.poster)
+                    ? urlFor(movie?.poster).width(250).height(370).url()
+                    : DEFAULT_POSTER_URL;
+                  return (
+                    <div
+                      key={movie?._id}
+                      onClick={() =>
+                        router.push(`/${ENavigationLinks.movies}/${movie?._id}`)
+                      }
+                      className="relative aspect-[2/3] rounded-xl overflow-hidden shadow-md cursor-pointer hover:scale-105 transition-transform"
+                    >
+                      <Image
+                        src={posterUrl}
+                        alt={movie?.title?.[lang] || 'Movie poster'}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 250px"
+                      />
+                      <div className="absolute inset-0 bg-black/60 flex flex-col justify-end p-3">
+                        <h3 className="text-base md:text-lg font-semibold text-white">
+                          {movie?.title?.[lang]}
+                        </h3>
                       </div>
-                    );
-                  })}
-                </div>
-              )}
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           ))}
         </div>

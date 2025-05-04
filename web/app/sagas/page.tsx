@@ -18,7 +18,7 @@ export default function SagasPage() {
 
   return (
     <PageLayout bgImage={bgImage} overlayColorClass={overlayColorClass}>
-      <div className="py-8 px-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      <div className="py-8 px-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
         {sagas?.map(saga => <SagaCard key={saga?._id} saga={saga} />)}
       </div>
     </PageLayout>
