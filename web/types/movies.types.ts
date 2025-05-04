@@ -1,3 +1,4 @@
+import { ImageType } from './image.type';
 import { LocalizedStringType, LocalizedTextType } from './sanity.types';
 
 export interface MovieType {
@@ -7,6 +8,6 @@ export interface MovieType {
   releaseDate: string;
   timelineDate: string;
   synopsis: LocalizedTextType;
-  poster?: any;
+  poster: ImageType;
   whereToWatch?: string[];
 }

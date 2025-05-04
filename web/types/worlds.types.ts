@@ -1,3 +1,4 @@
+import { ImageType } from './image.type';
 import { MovieType } from './movies.types';
 import { LocalizedStringType, LocalizedTextType } from './sanity.types';
 
@@ -6,11 +7,6 @@ export interface WorldType {
   name: LocalizedStringType;
   description: LocalizedTextType;
   longDescription: LocalizedTextType;
-  movies?: MovieType[];
-  image?: {
-    asset?: {
-      url: string;
-      _id: string;
-    };
-  };
+  movies: MovieType[];
+  image: ImageType;
 }

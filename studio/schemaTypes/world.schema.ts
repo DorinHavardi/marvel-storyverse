@@ -31,6 +31,12 @@ export default defineType({
       title: 'Movies/Series in World',
       of: [{type: 'reference', to: [{type: 'movie'}]}],
     }),
+    defineField({
+      name: 'residents',
+      type: 'array',
+      title: 'Residents (Characters in World)',
+      of: [{type: 'reference', to: [{type: 'character'}]}],
+    }),
   ],
   preview: {
     select: {

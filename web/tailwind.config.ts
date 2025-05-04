@@ -12,16 +12,16 @@ const config: Config = {
       },
       colors: {
         primary: {
-          dark: '#0C0F17',
-          medium: '#1F2C33',
+          dark: '#0C0F17', // Very dark blue-gray (background or app base)
+          medium: '#1F2C33', // Dark muted teal-gray (secondary background or surface)
         },
         neutral: {
-          DEFAULT: '#E9DED9',
-          text: '#889095',
+          DEFAULT: '#E9DED9', // Light beige (neutral background or surface)
+          text: '#889095', // Muted gray-blue (body text or secondary text)
         },
         accent: {
-          deep: '#6C2B2A',
-          soft: '#A4474F',
+          deep: '#6C2B2A', // Deep wine red (primary accent or buttons)
+          soft: '#A4474F', // Soft muted rose (hover or lighter accent)
         },
       },
     },

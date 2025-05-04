@@ -13,8 +13,8 @@ export const NAVIGATION_ROUTES = [
     href: `/${ENavigationLinks.sagas}`,
     labelKey: `navigation.${ENavigationLinks.sagas}`,
   },
-  {
-    href: `/${ENavigationLinks.worlds}`,
-    labelKey: `navigation.${ENavigationLinks.worlds}`,
-  },
+  // {
+  //   href: `/${ENavigationLinks.worlds}`,
+  //   labelKey: `navigation.${ENavigationLinks.worlds}`,
+  // },
 ];

@@ -4,15 +4,19 @@
 
 @layer components {
   .text-16 {
-    @apply text-[16px] text-primary-dark;
+    @apply text-base text-white;
   }
 
   .text-18 {
-    @apply text-[18px] text-primary-dark;
+    @apply text-lg leading-8 text-white;
   }
 
   .text-20 {
-    @apply text-[20px] text-primary-dark;
+    @apply text-xl text-white;
+  }
+
+  .text-24 {
+    @apply text-2xl text-white;
   }
 }
 
