@@ -33,7 +33,7 @@ export default function RootLayout({
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 0.4 }}
+                transition={{ duration: 0.2 }}
                 className="relative z-0"
               >
                 <main className="relative z-0">{children}</main>
