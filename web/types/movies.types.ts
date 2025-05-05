@@ -1,4 +1,6 @@
+import { CharacterType } from './characters.types';
 import { ImageType } from './image.type';
+import { PhaseType, SagaType } from './sagas.types';
 import { LocalizedStringType, LocalizedTextType } from './sanity.types';
 
 export interface MovieType {
@@ -10,4 +12,7 @@ export interface MovieType {
   synopsis: LocalizedTextType;
   poster: ImageType;
   whereToWatch?: string[];
+  saga: SagaType;
+  phase: PhaseType;
+  characters: CharacterType[];
 }

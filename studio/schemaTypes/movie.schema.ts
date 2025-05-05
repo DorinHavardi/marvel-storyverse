@@ -1,6 +1,4 @@
 import {defineField, defineType} from 'sanity'
-import localizedString from './localizedString'
-import localizedText from './localizedText'
 
 export default defineType({
   name: 'movie',
@@ -16,7 +14,12 @@ export default defineType({
       name: 'type',
       type: 'string',
       title: 'Type',
-      options: {list: ['movie', 'series']},
+      options: {
+        list: [
+          {title: 'Movie', value: 'movie'},
+          {title: 'Series', value: 'series'},
+        ],
+      },
     }),
     defineField({
       name: 'releaseDate',
@@ -44,7 +47,26 @@ export default defineType({
       title: 'Where to Watch',
       of: [{type: 'string'}],
     }),
+    defineField({
+      name: 'saga',
+      type: 'reference',
+      title: 'Saga',
+      to: [{type: 'saga'}],
+    }),
+    defineField({
+      name: 'phase',
+      type: 'reference',
+      title: 'Phase',
+      to: [{type: 'phase'}],
+    }),
+    defineField({
+      name: 'characters',
+      type: 'array',
+      title: 'Main Characters',
+      of: [{type: 'reference', to: [{type: 'character'}]}],
+    }),
   ],
+
   preview: {
     select: {
       title: 'title.en',

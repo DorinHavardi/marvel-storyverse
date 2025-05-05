@@ -9,7 +9,10 @@ export const getMoviesQuery = groq`
     timelineDate,
     synopsis,
     poster,
-    whereToWatch
+    whereToWatch,
+    saga->{ _id, name },
+    phase->{ _id, name },
+    characters[]->{ _id, name, image }
   }
 `;
 
@@ -21,6 +24,10 @@ export const getMovieByIdQuery = (id: string) => groq`
     releaseDate,
     timelineDate,
     synopsis,
-    poster
+    poster,
+    whereToWatch,
+    saga->{ _id, name },
+    phase->{ _id, name },
+    characters[]->{ _id, name, image }
   }
 `;
