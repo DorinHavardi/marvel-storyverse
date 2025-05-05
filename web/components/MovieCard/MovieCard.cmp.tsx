@@ -9,6 +9,7 @@ import { useRouter } from 'next/navigation';
 import { DEFAULT_POSTER_URL } from '@/constants/images.const';
 import { ENavigationLinks } from '@/enum/navigation.enum';
 import { motion } from 'framer-motion';
+import TimelineLabel from './TimelineLabel.cmp';
 
 interface MovieCardProps {
   movie: MovieType;
@@ -31,11 +32,7 @@ const MovieCard = ({ movie, index }: MovieCardProps) => {
       transition={{ duration: 0.6, ease: 'easeOut', delay: index * 0.1 }}
     >
       {movie?.timelineDate && (
-        <div className="px-3 py-1 mb-4 rounded-md bg-accent-deep shadow-glow">
-          <p className="text-lg font-bold text-gray-300 mb-1">
-            {movie?.timelineDate}
-          </p>
-        </div>
+        <TimelineLabel timelineDate={movie?.timelineDate} />
       )}
       <div
         className={`flex justify-center text-center  w-full`}
