@@ -28,10 +28,16 @@ export default function MoviesPage() {
     if (isLoading) return <Loader color="#60a5fa" />;
     if (error) return <ErrorNotice />;
     return (
-      <div className="py-8 grid grid-cols-1 sm:grid-cols-2 gap-8">
-        {sortedMovies?.map((movie, index) => (
-          <MovieCard key={movie._id} movie={movie} index={index} />
-        ))}
+      <div className="relative py-8">
+        {/* Glowing vertical timeline */}
+        <div className="absolute top-0 bottom-0 left-1/2 w-2 -translate-x-1/2 bg-white blur-sm" />
+
+        {/* Movie grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          {sortedMovies?.map((movie, index) => (
+            <MovieCard key={movie._id} movie={movie} index={index} />
+          ))}
+        </div>
       </div>
     );
   }, [isLoading, error, sortedMovies]);
