@@ -23,7 +23,7 @@ const PageLayout = ({
         src={bgImage}
         alt="Background"
         fill
-        className="object-cover z-0"
+        className="object-cover z-0 transition-opacity duration-500"
         priority
       />
       <div className={`absolute inset-0 ${overlayColorClass} z-10`} />

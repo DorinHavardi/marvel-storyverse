@@ -8,12 +8,14 @@ import { isValidImageSource } from '@/utils/image.util';
 import { useRouter } from 'next/navigation';
 import { DEFAULT_POSTER_URL } from '@/constants/images.const';
 import { ENavigationLinks } from '@/enum/navigation.enum';
+import { motion } from 'framer-motion';
 
 interface MovieCardProps {
   movie: MovieType;
+  index: number;
 }
 
-const MovieCard = ({ movie }: MovieCardProps) => {
+const MovieCard = ({ movie, index }: MovieCardProps) => {
   const router = useRouter();
   const { lang } = useLocales();
 
@@ -22,7 +24,12 @@ const MovieCard = ({ movie }: MovieCardProps) => {
     : DEFAULT_POSTER_URL;
 
   return (
-    <div className="flex flex-col items-center">
+    <motion.div
+      className="flex flex-col items-center"
+      initial={{ rotateY: 90, opacity: 0 }}
+      animate={{ rotateY: 0, opacity: 1 }}
+      transition={{ duration: 0.6, ease: 'easeOut', delay: index * 0.1 }}
+    >
       {movie?.timelineDate && (
         <div className="px-3 py-1 mb-4 rounded-md bg-accent-deep shadow-glow">
           <p className="text-lg font-bold text-gray-300 mb-1">
@@ -36,6 +43,7 @@ const MovieCard = ({ movie }: MovieCardProps) => {
       >
         <div className="relative w-[80%] h-[30rem] rounded-2xl overflow-hidden shadow-md">
           <Image
+            priority
             src={posterUrl}
             alt={movie?.title?.[lang] || 'Movie poster'}
             fill
@@ -49,7 +57,7 @@ const MovieCard = ({ movie }: MovieCardProps) => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

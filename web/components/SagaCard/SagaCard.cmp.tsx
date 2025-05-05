@@ -49,6 +49,7 @@ const SagaCard = ({ saga }: SagaCardProps) => {
                       className="relative aspect-[2/3] rounded-xl overflow-hidden shadow-md cursor-pointer hover:scale-105 transition-transform"
                     >
                       <Image
+                        priority
                         src={posterUrl}
                         alt={movie?.title?.[lang] || 'Movie poster'}
                         fill

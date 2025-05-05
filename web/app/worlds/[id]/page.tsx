@@ -36,6 +36,7 @@ export default function WorldPage() {
           alt={name?.[lang] || 'World image'}
           fill
           className="object-cover"
+          priority
         />
       </div>
       <div className="px-4">
@@ -53,8 +54,8 @@ export default function WorldPage() {
 
         {movies?.length && (
           <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
-            {movies.map(movie => (
-              <MovieCard key={movie._id} movie={movie} />
+            {movies.map((movie, index) => (
+              <MovieCard key={movie._id} movie={movie} index={index} />
             ))}
           </div>
         )}

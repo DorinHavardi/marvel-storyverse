@@ -22,6 +22,7 @@ const CharacterCard = ({ character }: CharacterCardProps) => {
     <div className="p-4 text-center">
       <div className="relative mx-auto aspect-square w-32 sm:w-40 md:w-48 lg:w-56">
         <Image
+          priority
           src={characterImageUrl}
           alt={character?.name?.[lang] || 'Character'}
           fill

@@ -29,6 +29,7 @@ const WorldCard = ({ world }: WorldCardProps) => {
       <div className="relative w-full h-36">
         {world?.image && (
           <Image
+            priority
             src={imageUrl}
             alt={world?.name?.[lang] || 'World'}
             fill

@@ -29,8 +29,8 @@ export default function MoviesPage() {
     if (error) return <ErrorNotice />;
     return (
       <div className="py-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
-        {sortedMovies?.map(movie => (
-          <MovieCard key={movie._id} movie={movie} />
+        {sortedMovies?.map((movie, index) => (
+          <MovieCard key={movie._id} movie={movie} index={index} />
         ))}
       </div>
     );
