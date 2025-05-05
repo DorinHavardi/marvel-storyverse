@@ -29,7 +29,7 @@ const PageLayout = ({
       <div className={`absolute inset-0 ${overlayColorClass} z-10`} />
       <div
         className={clsx(
-          'relative z-20 h-full overflow-y-auto pt-16 px-4',
+          'relative z-20 h-full overflow-y-auto pt-16 px-2',
           className,
         )}
       >
