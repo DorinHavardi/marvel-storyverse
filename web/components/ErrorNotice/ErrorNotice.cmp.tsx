@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-export const ErrorNotice = () => {
+const ErrorNotice = () => {
   const { t } = useTranslation();
   return (
     <div className="p-10 text-center text-red-500">
@@ -9,3 +9,5 @@ export const ErrorNotice = () => {
     </div>
   );
 };
+
+export default ErrorNotice;

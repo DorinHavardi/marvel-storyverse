@@ -1,6 +1,6 @@
 'use client';
-import PageLayout from '@/components/Layout/PageLayouts.cmp';
-import Logo from '@/components/Logo/Logo.cmp';
+
+import { PageLayout, Logo } from '@/components';
 
 export default function HomePage() {
   return (

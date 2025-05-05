@@ -9,7 +9,7 @@ interface CharacterCardProps {
   character: CharacterType;
 }
 
-export const CharacterCard = ({ character }: CharacterCardProps) => {
+const CharacterCard = ({ character }: CharacterCardProps) => {
   const { lang } = useLocales();
 
   console.log('character', character);
@@ -41,3 +41,5 @@ export const CharacterCard = ({ character }: CharacterCardProps) => {
     </div>
   );
 };
+
+export default CharacterCard;

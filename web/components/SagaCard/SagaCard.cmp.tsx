@@ -13,7 +13,7 @@ interface SagaCardProps {
   saga: SagaType;
 }
 
-export const SagaCard = ({ saga }: SagaCardProps) => {
+const SagaCard = ({ saga }: SagaCardProps) => {
   const router = useRouter();
   const { lang } = useLocales();
 
@@ -71,3 +71,5 @@ export const SagaCard = ({ saga }: SagaCardProps) => {
     </div>
   );
 };
+
+export default SagaCard;

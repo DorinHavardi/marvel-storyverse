@@ -2,14 +2,13 @@
 
 import { useParams } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
-import { ErrorNotice } from '@/components/ErrorNotice/ErrorNotice.cmp';
 import { isValidImageSource } from '@/utils/image.util';
 import { urlFor } from '@/sanity/client';
 import Image from 'next/image';
 import { DEFAULT_POSTER_URL } from '@/constants/images.const';
-import { MovieCard } from '@/components/MovieCard/MovieCard.cmp';
 import { useGetWorldByIdQuery } from '@/hooks/useWorlds.hook';
 import { useLocales } from '@/hooks/useLocales.hook';
+import { ErrorNotice, MovieCard } from '@/components';
 
 export default function WorldPage() {
   const { t } = useTranslation();

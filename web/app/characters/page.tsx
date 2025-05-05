@@ -1,8 +1,6 @@
 'use client';
 
-import { CharacterCard } from '@/components/CharacterCard/CharacterCard.cmp';
-import { ErrorNotice } from '@/components/ErrorNotice/ErrorNotice.cmp';
-import PageLayout from '@/components/Layout/PageLayouts.cmp';
+import { CharacterCard, ErrorNotice, PageLayout } from '@/components';
 import { useCharacters } from '@/hooks/useCharacters.hook';
 import { useTranslation } from 'react-i18next';
 

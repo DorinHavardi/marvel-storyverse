@@ -4,9 +4,9 @@ import Link from 'next/link';
 import { MobileMenu } from './MobileMenu.cmp';
 import { NAVIGATION_ROUTES } from '@/constants/navigationRoutes.const';
 import { useTranslation } from 'react-i18next';
-import Logo from '../Logo/Logo.cmp';
 import { usePathname, useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { Logo } from '..';
 
 export const Navbar = () => {
   const { t } = useTranslation();

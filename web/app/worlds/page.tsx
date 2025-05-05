@@ -1,7 +1,6 @@
 'use client';
 
-import { ErrorNotice } from '@/components/ErrorNotice/ErrorNotice.cmp';
-import { WorldCard } from '@/components/WorldCard/WorldCard.cmp';
+import { ErrorNotice, WorldCard } from '@/components';
 import { useWorlds } from '@/hooks/useWorlds.hook';
 import { useTranslation } from 'react-i18next';
 

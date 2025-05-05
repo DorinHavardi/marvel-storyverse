@@ -14,7 +14,7 @@ interface MovieCardProps {
   align?: 'left' | 'right';
 }
 
-export const MovieCard = ({ movie, align }: MovieCardProps) => {
+const MovieCard = ({ movie, align }: MovieCardProps) => {
   const router = useRouter();
   const { lang } = useLocales();
 
@@ -57,3 +57,5 @@ export const MovieCard = ({ movie, align }: MovieCardProps) => {
     </div>
   );
 };
+
+export default MovieCard;

@@ -13,7 +13,7 @@ interface WorldCardProps {
   world: WorldType;
 }
 
-export const WorldCard = ({ world }: WorldCardProps) => {
+const WorldCard = ({ world }: WorldCardProps) => {
   const router = useRouter();
   const { lang } = useLocales();
 
@@ -47,3 +47,5 @@ export const WorldCard = ({ world }: WorldCardProps) => {
     </div>
   );
 };
+
+export default WorldCard;

@@ -1,13 +1,13 @@
 'use client';
 
 import { useParams } from 'next/navigation';
-import { ErrorNotice } from '@/components/ErrorNotice/ErrorNotice.cmp';
 import { useLocales } from '@/hooks/useLocales.hook';
 import { isValidImageSource } from '@/utils/image.util';
 import { urlFor } from '@/sanity/client';
 import Image from 'next/image';
 import { useMovieById } from '@/hooks/useMovies.hook';
 import { useTranslation } from 'react-i18next';
+import { ErrorNotice } from '@/components';
 
 export default function MovieDetailPage() {
   const { id } = useParams();
