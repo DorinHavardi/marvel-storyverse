@@ -5,6 +5,15 @@
         "studio",
         "web"
     ],
+    "resolutions": {
+        "@sanity/client": "6.29.1",
+        "@sanity/cli": "3.86.1",
+        "@sanity/export": "3.43.0",
+        "@sanity/mutate": "0.12.4",
+        "@sanity/codegen": "3.88.2",
+        "@sanity/types": "3.88.2",
+        "@sanity/util": "3.88.2"
+    },
     "scripts": {
         "dev:studio": "yarn --cwd studio dev",
         "dev:web": "yarn --cwd web dev",

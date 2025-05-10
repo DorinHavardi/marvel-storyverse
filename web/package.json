@@ -8,7 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@sanity/client": "^5.10.3",
+    "@sanity/client": "^6.29.1",
     "@sanity/image-url": "^1.0.3",
     "@tanstack/react-query": "^4.29.28",
     "@tanstack/react-query-devtools": "^5.74.7",
