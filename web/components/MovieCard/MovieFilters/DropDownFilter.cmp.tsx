@@ -9,7 +9,9 @@ const DropDownFilter = ({
   return (
     <div className="relative">
       <select
-        className="w-full px-3 py-2 border rounded-lg bg-black/30 text-white"
+        id={id}
+        name={id}
+        className="w-full border rounded-lg bg-black/30 text-white"
         multiple
         onChange={e => {
           const selectedValues = Array.from(e.target.selectedOptions).map(

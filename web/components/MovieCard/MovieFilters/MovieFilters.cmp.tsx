@@ -48,9 +48,10 @@ const MovieFilters = ({ onChange, filterGroups }: MovieFiltersProps) => {
 
   return (
     <div className="flex flex-wrap gap-6 p-4 mb-6 rounded-xl bg-black/30 text-white">
+      {/* SORT */}
       <MovieSort sortBy={sortBy} setSortBy={setSortBy} />
-
-      {filterGroups.map(group => (
+      {/* FILTERS */}
+      {filterGroups?.map(group => (
         <FilterGroup
           key={group?.id}
           id={group?.id}

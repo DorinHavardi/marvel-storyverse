@@ -20,7 +20,9 @@ const MovieSort = ({ sortBy, setSortBy }: MovieSortProps) => {
         onChange={e => setSortBy(e.target.value as ESortBy)}
       >
         {Object.values(ESortBy).map(option => (
-          <option value={option}>{t(`movies_screen.sort.${option}`)}</option>
+          <option key={option} value={option}>
+            {t(`movies_screen.sort.${option}`)}
+          </option>
         ))}
       </select>
     </div>
