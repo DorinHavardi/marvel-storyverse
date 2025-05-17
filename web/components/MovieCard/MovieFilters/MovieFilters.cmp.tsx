@@ -1,13 +1,14 @@
 import { MovieFilterOptions } from '@/bl/movies.bl';
-import { ESortBy } from '@/enum/movies.enum';
+import { EFilterType, ESortBy } from '@/enum/movies.enum';
 import React, { useEffect, useState } from 'react';
 import FilterGroup from './FilterGroup.cmp';
 import MovieSort from './MovieSort.cmp';
 
 interface FilterGroupItem {
-  id: string; // Unique identifier for the filter group
+  id: string;
   title: string;
   data: { _id: string; title: string }[];
+  type: EFilterType;
 }
 
 interface MovieFiltersProps {
@@ -55,6 +56,7 @@ const MovieFilters = ({ onChange, filterGroups }: MovieFiltersProps) => {
           id={group?.id}
           title={group?.title}
           options={group?.data}
+          type={group?.type}
           selected={selectedFilters[group?.id] || []}
           toggleItem={toggleItem}
         />

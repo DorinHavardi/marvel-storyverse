@@ -9,3 +9,8 @@ export enum EFilterBy {
   PHASES = 'phases',
   CHARACTERS = 'characters',
 }
+
+export enum EFilterType {
+  Dropdown = 'dropdown',
+  Bubble = 'bubble',
+}

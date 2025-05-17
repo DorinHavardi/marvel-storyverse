@@ -4,7 +4,7 @@ import { useMovies } from '@/hooks/useMovies.hook';
 import { useCallback, useMemo, useState } from 'react';
 import { ErrorNotice, Loader, MovieCard, PageLayout } from '@/components';
 import { filterAndSortMovies, MovieFilterOptions } from '@/bl/movies.bl';
-import { EFilterBy, ESortBy } from '@/enum/movies.enum';
+import { EFilterBy, EFilterType, ESortBy } from '@/enum/movies.enum';
 import MovieFilters from '@/components/MovieCard/MovieFilters/MovieFilters.cmp';
 import { useTranslation } from 'react-i18next';
 import { useLocales } from '@/hooks/useLocales.hook';
@@ -68,16 +68,19 @@ export default function MoviesPage() {
       id: EFilterBy.SAGAS,
       title: t('common.sagas'),
       data: allSagas,
+      type: EFilterType.Bubble,
     },
     {
       id: EFilterBy.PHASES,
       title: t('common.phases'),
       data: allPhases,
+      type: EFilterType.Bubble,
     },
     {
       id: EFilterBy.CHARACTERS,
       title: t('common.characters'),
       data: allCharacters,
+      type: EFilterType.Dropdown,
     },
   ];
 
