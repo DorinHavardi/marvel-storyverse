@@ -4,3 +4,8 @@ export enum ESortBy {
   timelineAsc = 'timelineAsc',
   timelineDesc = 'timelineDesc',
 }
+export enum EFilterBy {
+  SAGAS = 'sagas',
+  PHASES = 'phases',
+  CHARACTERS = 'characters',
+}

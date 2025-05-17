@@ -3,6 +3,8 @@
         "title": "Marvel Storyverse",
         "movies": "סרטים",
         "characters": "דמויות",
+        "sagas": "סאגות",
+        "phases": "סאגות",
         "loading": "טוען...",
         "TBD": "בקרוב"
     },
@@ -14,6 +16,18 @@
         "characters": "דמויות",
         "sagas": "סאגות",
         "worlds": "עולמות"
+    },
+    "movies_screen": {
+        "sort": {
+            "title": "מיון",
+            "releaseAsc": "תאריך יציאה בסדר עולה",
+            "releaseDesc": "תאריך יציאה בסדר יורד",
+            "timelineAsc": "ציר הזמן בסדר עולה",
+            "timelineDesc": "ציר הזמן בסדר יורד"
+        },
+        "filter": {
+            "title": "סינון"
+        }
     },
     "movie_screen": {
         "release_date": "תאריך יציאה",
