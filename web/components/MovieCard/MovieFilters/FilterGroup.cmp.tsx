@@ -22,7 +22,12 @@ const FilterGroup = ({
         toggleItem={toggleItem}
       />
     ) : (
-      <DropDownFilter id={id} options={options} toggleItem={toggleItem} />
+      <DropDownFilter
+        id={id}
+        options={options}
+        selected={selected}
+        toggleItem={toggleItem}
+      />
     )}
   </div>
 );

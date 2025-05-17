@@ -9,7 +9,7 @@ export interface SingleFilterGroupsProps {
   id: string;
   options: IOptionItem[];
   toggleItem: (groupKey: string, value: string) => void;
-  selected?: string[];
+  selected: string[];
 }
 
 export interface FilterGroupsProps extends SingleFilterGroupsProps {

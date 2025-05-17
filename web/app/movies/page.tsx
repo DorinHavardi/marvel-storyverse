@@ -65,6 +65,12 @@ export default function MoviesPage() {
 
   const moviesFilterGroup = [
     {
+      id: EFilterBy.CHARACTERS,
+      title: t('common.characters'),
+      data: allCharacters,
+      type: EFilterType.Dropdown,
+    },
+    {
       id: EFilterBy.SAGAS,
       title: t('common.sagas'),
       data: allSagas,
@@ -75,12 +81,6 @@ export default function MoviesPage() {
       title: t('common.phases'),
       data: allPhases,
       type: EFilterType.Bubble,
-    },
-    {
-      id: EFilterBy.CHARACTERS,
-      title: t('common.characters'),
-      data: allCharacters,
-      type: EFilterType.Dropdown,
     },
   ];
 

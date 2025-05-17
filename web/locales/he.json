@@ -6,7 +6,8 @@
         "sagas": "סאגות",
         "phases": "סאגות",
         "loading": "טוען...",
-        "TBD": "בקרוב"
+        "TBD": "בקרוב",
+        "all": "הכל"
     },
     "errors": {
         "something_went_wrong": "משהו השתבש"
