@@ -8,13 +8,13 @@ import { EFilterBy, ESortBy } from '@/enum/movies.enum';
 import MovieFilters from '@/components/MovieCard/MovieFilters/MovieFilters.cmp';
 import { useTranslation } from 'react-i18next';
 import { useLocales } from '@/hooks/useLocales.hook';
+import { MOVIES_BG_IMAGE } from '@/constants/images.const';
 
 export default function MoviesPage() {
   const { t } = useTranslation();
   const { lang } = useLocales();
   const { data: movies, isLoading, error } = useMovies();
 
-  const bgImage = '/images/design/space/galaxy_4.jpg';
   const overlayColorClass = 'bg-yellow-400/30';
 
   const [filters, setFilters] = useState<MovieFilterOptions>({
@@ -100,7 +100,7 @@ export default function MoviesPage() {
   }, [isLoading, error, filteredMovies, moviesFilterGroup]);
 
   return (
-    <PageLayout bgImage={bgImage} overlayColorClass={overlayColorClass}>
+    <PageLayout bgImage={MOVIES_BG_IMAGE} overlayColorClass={overlayColorClass}>
       {renderContent()}
     </PageLayout>
   );

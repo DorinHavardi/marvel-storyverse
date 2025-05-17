@@ -1,13 +1,13 @@
 'use client';
 
 import { ErrorNotice, Loader, PageLayout, SagaCard } from '@/components';
+import { SAGAS_BG_IMAGE } from '@/constants/images.const';
 import { useSagas } from '@/hooks/useSagas.hook';
 import { useCallback } from 'react';
 
 export default function SagasPage() {
   const { data: sagas, isLoading, error } = useSagas();
 
-  const bgImage = '/images/design/space/galaxy_2.jpg';
   const overlayColorClass = 'bg-blue-400/20';
 
   const renderContent = useCallback(() => {
@@ -21,7 +21,7 @@ export default function SagasPage() {
   }, [isLoading, error, sagas]);
 
   return (
-    <PageLayout bgImage={bgImage} overlayColorClass={overlayColorClass}>
+    <PageLayout bgImage={SAGAS_BG_IMAGE} overlayColorClass={overlayColorClass}>
       {renderContent()}
     </PageLayout>
   );

@@ -3,6 +3,7 @@
 import { ReactNode } from 'react';
 import Image from 'next/image';
 import clsx from 'clsx';
+import { MAIN_LAYOUT_BG_IMAGE } from '@/constants/images.const';
 
 interface PageLayoutProps {
   children: ReactNode;
@@ -13,7 +14,7 @@ interface PageLayoutProps {
 
 const PageLayout = ({
   children,
-  bgImage = '/images/design/space/red_galaxy_bg.jpg',
+  bgImage = MAIN_LAYOUT_BG_IMAGE,
   overlayColorClass = 'bg-purple-900/25',
   className = '',
 }: PageLayoutProps) => {
